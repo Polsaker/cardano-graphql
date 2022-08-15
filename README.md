@@ -40,7 +40,7 @@ Check the [releases] for the latest version.
 ``` console
 git clone \
   --single-branch \
-  --branch 6.2.0 \
+  --branch 7.0.0 \
   --recurse-submodules \
   https://github.com/input-output-hk/cardano-graphql.git \
   && cd cardano-graphql
@@ -61,7 +61,7 @@ Get the most recent weekly snapshot link [here](https://update-cardano-mainnet.i
 ``` console
 DOCKER_BUILDKIT=1 \
 COMPOSE_DOCKER_CLI_BUILD=1 \
-RESTORE_SNAPSHOT=https://update-cardano-mainnet.iohk.io/cardano-db-sync/12/db-sync-snapshot-schema-12-block-6764999-x86_64.tgz \
+RESTORE_SNAPSHOT=https://update-cardano-mainnet.iohk.io/cardano-db-sync/13/db-sync-snapshot-schema-13-block-7622755-x86_64.tgz \
 docker-compose up -d --build &&\
 docker-compose logs -f
 ```
@@ -75,7 +75,7 @@ Get the most recent weekly snapshot link [here](https://updates-cardano-testnet.
 DOCKER_BUILDKIT=1 \
 COMPOSE_DOCKER_CLI_BUILD=1 \
 NETWORK=testnet \
-RESTORE_SNAPSHOT=https://updates-cardano-testnet.s3.amazonaws.com/cardano-db-sync/12/db-sync-snapshot-schema-12-block-3185999-x86_64.tgz \
+RESTORE_SNAPSHOT=https://updates-cardano-testnet.s3.amazonaws.com/cardano-db-sync/13/db-sync-snapshot-schema-13-block-3680594-x86_64.tgz \
 API_PORT=3101 \
 HASURA_PORT=8091 \
 OGMIOS_PORT=1338 \
@@ -98,10 +98,10 @@ your use-case.
 Get the most recent weekly snapshot link [here](https://update-cardano-mainnet.iohk.io/cardano-db-sync/index.html#11/), and set it as `RESTORE_SNAPSHOT` below, or omit if you wish to sync from genesis.
 ``` console
 export NETWORK=mainnet &&\
-docker pull inputoutput/cardano-graphql:6.2.0-${NETWORK} &&\
-docker pull inputoutput/cardano-graphql-hasura:6.2.0 &&\
+docker pull inputoutput/cardano-graphql:7.0.0-${NETWORK} &&\
+docker pull inputoutput/cardano-graphql-hasura:7.0.0 &&\
 docker pull cardanosolutions/cardano-node-ogmios:v5.5.0-${NETWORK} &&\
-RESTORE_SNAPSHOT=https://update-cardano-mainnet.iohk.io/cardano-db-sync/13/db-sync-snapshot-schema-13-block-6849999-x86_64.tgz \
+RESTORE_SNAPSHOT=https://update-cardano-mainnet.iohk.io/cardano-db-sync/13/db-sync-snapshot-schema-13-block-7622755-x86_64.tgz \
 docker-compose up -d &&\
 docker-compose logs -f
 ```
@@ -113,10 +113,10 @@ docker-compose logs -f
 Get the most recent weekly snapshot link [here](https://updates-cardano-testnet.s3.amazonaws.com/cardano-db-sync/index.html#11/), and set it as `RESTORE_SNAPSHOT` below, or omit if you wish to sync from genesis.
 ``` console
 export NETWORK=testnet &&\
-docker pull inputoutput/cardano-graphql:6.2.0-${NETWORK} &&\
-docker pull inputoutput/cardano-graphql-hasura:6.2.0 &&\
-docker pull cardanosolutions/cardano-node-ogmios:v5.5.0-${NETWORK} &&\
-RESTORE_SNAPSHOT=https://updates-cardano-testnet.s3.amazonaws.com/cardano-db-sync/13/db-sync-snapshot-schema-13-block-3654385-x86_64.tgz \
+docker pull inputoutput/cardano-graphql:7.0.0-${NETWORK} &&\
+docker pull inputoutput/cardano-graphql-hasura:7.0.0 &&\
+docker pull cardanosolutions/cardano-node-ogmios:v5.5.3_1.35.3-${NETWORK} &&\
+RESTORE_SNAPSHOT=https://updates-cardano-testnet.s3.amazonaws.com/cardano-db-sync/13/db-sync-snapshot-schema-13-block-3680594-x86_64.tgz \
 API_PORT=3101 \
 HASURA_PORT=8091 \
 OGMIOS_PORT=1338 \
